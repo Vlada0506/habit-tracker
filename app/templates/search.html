@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Поиск привычек</h2>
+
+<p>Запрос: "{{ query }}"</p>
+
+{% for habit in results %}
+<div class="card">
+
+    <h3>{{ habit.name }}</h3>
+
+    <p>{{ habit.description }}</p>
+
+    <a href="{{ url_for('main.habit_detail', id=habit.id) }}">
+        Подробнее
+    </a>
+
+</div>
+{% endfor %}
+
+{% if query and not results %}
+<p>Ничего не найдено.</p>
+{% endif %}
+
+{% endblock %}

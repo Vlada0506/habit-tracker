@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ habit.name }}</h2>
+
+<p>{{ habit.description }}</p>
+
+<h3>История за последние 7 дней</h3>
+
+<table>
+    <tr>
+        <th>Дата</th>
+        <th>Выполнено</th>
+    </tr>
+
+    {% for item in history %}
+    <tr>
+        <td>{{ item.date }}</td>
+        <td>{{ item.count }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

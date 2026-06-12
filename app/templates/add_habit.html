@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Добавить привычку</h2>
+
+<form method="POST">
+
+    <label>Название</label>
+    <input type="text" name="name" required>
+
+    <label>Описание</label>
+    <textarea name="description"></textarea>
+
+    <label>Цель в день</label>
+    <input
+        type="number"
+        name="target_per_day"
+        min="1"
+        value="1"
+        required
+    >
+
+    <button type="submit">Создать</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>
+            <a href="{{ url_for('main.index') }}">
+                Habit Tracker
+            </a>
+        </h1>
+
+        <nav>
+            <a href="{{ url_for('main.add_habit') }}">
+                Добавить привычку
+            </a>
+        </nav>
+
+        <form action="{{ url_for('main.search') }}" method="GET">
+            <input
+                type="text"
+                name="q"
+                placeholder="Поиск привычки"
+            >
+            <button type="submit">Найти</button>
+        </form>
+
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

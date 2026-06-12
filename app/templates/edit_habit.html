@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Редактирование привычки</h2>
+
+<form method="POST">
+
+    <label>Название</label>
+    <input
+        type="text"
+        name="name"
+        value="{{ habit.name }}"
+        required
+    >
+
+    <label>Описание</label>
+    <textarea name="description">{{ habit.description }}</textarea>
+
+    <label>Цель в день</label>
+    <input
+        type="number"
+        name="target_per_day"
+        value="{{ habit.target_per_day }}"
+        min="1"
+        required
+    >
+
+    <button type="submit">
+        Сохранить
+    </button>
+
+</form>
+
+{% endblock %}
